@@ -27,9 +27,9 @@ app.use(cors({origin:"*"}));
  app.use(express.json());
 
  app.use('/produto', rotaProduto);
- app.use('/categoriaProduto', rotaCategoriaProd);
+//  app.use('/categoriaProduto', rotaCategoriaProd);
  
- const porta= 4024;
+ const porta = 4024;
  const hostname = '0.0.0.0';
  
  app.listen(porta,hostname,()=>{
