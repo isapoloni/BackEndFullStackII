@@ -1,10 +1,6 @@
 import express from "express";
-import routerPessoa from "./Router/RouterPessoas.js";
-import rotaCategoriaProd from "./Router/rotaCategoriaProd.js";
 import cors from "cors";
 import rotaProduto from "./Router/rotaProduto.js";
-import routerServico from "./Router/routerServicos.js";
-import rotaCategoriaProd from "./Router/rotaCategoriaProd.js";
 
 // const server = express();
 // server.use(cors({ origin: "*" }));
@@ -27,7 +23,6 @@ app.use(cors({origin:"*"}));
  app.use(express.json());
 
  app.use('/produto', rotaProduto);
-//  app.use('/categoriaProduto', rotaCategoriaProd);
  
  const porta = 4024;
  const hostname = '0.0.0.0';
