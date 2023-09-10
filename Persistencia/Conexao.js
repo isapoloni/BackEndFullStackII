@@ -8,7 +8,7 @@ export default async function conectar() {
     host: "localhost",
     user: "aluno24-pfsii",
     porta: 3306,
-    password:"VcZ2s3SHrZ9nfCwcVuq9",
+    password:"aluno24-pfsii",
     database:"backendFullStackII"
   });
   global.conexao = conexao;
