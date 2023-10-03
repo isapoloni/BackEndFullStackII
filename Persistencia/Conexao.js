@@ -11,7 +11,7 @@ export default async function Conect() {
     user: "aluno24-pfsii",
     porta: "3306",
     // password: "aluno24-pfsii",
-    password: "dSLiWNkdewTfiB4hiPvk",
+    password: "BZ0rKbMOZKXF40FqpZXn",
     // user: "root",
     // password : "",    
     database: "backendFullStackII",
