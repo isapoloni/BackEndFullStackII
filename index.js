@@ -2,19 +2,7 @@ import express from "express";
 import cors from "cors";
 import rotaProduto from "./Router/rotaProduto.js";
 import rotaCategoriaProd from './Router/rotaCategoriaProd.js';
-
-// const server = express();
-// server.use(cors({ origin: "*" }));
-// server.use(express.urlencoded({ extended: false }));
-// server.use(express.json());
-// server.use("/pessoas", routerPessoa);
-// server.use("/produto", rotaProduto);
-// server.use("/servicos", routerServico);
-// server.use("/categoria", rotaCategoriaProd);
-
-// server.listen(3308, "localhost", () => {
-//   console.log("Service running on http://localhost:3308 ");
-// });
+import rotaPessoas from "./Router/rotaPessoas.js";
 
 const app = new express();
 app.use(cors({origin:"*"}));
@@ -25,7 +13,7 @@ app.use(cors({origin:"*"}));
 
  app.use('/produto', rotaProduto); 
  app.use('/categoriaProduto', rotaCategoriaProd);
-
+ app.use('/pessoas', rotaPessoas)
  
  const porta = 4024;
  const hostname = '0.0.0.0';

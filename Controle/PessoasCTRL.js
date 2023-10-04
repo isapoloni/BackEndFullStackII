@@ -30,37 +30,24 @@ export default class PessoasCTRL {
     response.type("application/json");
     if (request.method === "POST" && request.is("application/json")) {
       const data = request.body;
-      const cpf = data.cpf;      
+      const cpf = data.cpf;
       const nome = data.nome;
-      const nascimento = data.nascimento;
       const endereco = data.endereco;
-      const cidade = data.cidade;
       const telefone = data.telefone;
-      const email = data.email;
-      const tipo = data.tipo;
-      const profissao1 = data.profissao1;       
       if (
+
         cpf &&
         nome &&
-        nascimento &&
         endereco &&
-        cidade &&
-        telefone &&
-        email &&
-        tipo &&
-        profissao1     
-            
+        telefone 
+
       ) {
         const pessoa = new Pessoas(
-        cpf,
-        nome,
-        nascimento,
-        endereco,
-        cidade,
-        telefone,
-        email,
-        tipo,
-        profissao1    
+          cpf,
+          nome,
+          endereco,
+          telefone,
+          
         );
         pessoa
           .gravar()
@@ -95,36 +82,21 @@ export default class PessoasCTRL {
     response.type("application/json");
     if (request.method === "PUT" && request.is("application/json")) {
       const data = request.body;
-      const cpf = data.cpf;      
+      const cpf = data.cpf;
       const nome = data.nome;
-      const nascimento = data.nascimento;
       const endereco = data.endereco;
-      const cidade = data.cidade;
       const telefone = data.telefone;
-      const email = data.email;
-      const tipo = data.tipo;
-      const profissao1 = data.profissao1;  
       if (
         cpf &&
         nome &&
-        nascimento &&
         endereco &&
-        cidade &&
-        telefone &&
-        email &&
-        tipo &&
-        profissao1  
+        telefone 
       ) {
         const pessoas = new Pessoas(
-        cpf,
-        nome,
-        nascimento,
-        endereco,
-        cidade,
-        telefone,
-        email,
-        tipo,
-        profissao1  
+          cpf,
+          nome,
+          endereco,
+          telefone
         );
         pessoas
           .atualizar()
