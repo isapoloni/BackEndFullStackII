@@ -1,4 +1,4 @@
-import ProdutoBDPid from "../Persistencia/ProdutoBdPid.js";
+import ProdutoBDPid from "../Persistencia/ProdutoBD.js";
 
 export default class Produto {
     #codigo;

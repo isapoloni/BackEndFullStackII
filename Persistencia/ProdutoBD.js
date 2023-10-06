@@ -1,5 +1,5 @@
 import conectar from "./Conexao.js";
-import Produto from "../Modelo/ProdutoPid.js";
+import Produto from "../Modelo/Produto.js";
 
 
 export default class ProdutoBDPid {

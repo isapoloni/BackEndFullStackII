@@ -25,30 +25,22 @@ export default class PessoasCTRL {
       });
     }
   }
+
   // Função para gravar uma nova pessoa
   gravar(request, response) {
     response.type("application/json");
+    
     if (request.method === "POST" && request.is("application/json")) {
       const data = request.body;
       const cpf = data.cpf;
       const nome = data.nome;
       const endereco = data.endereco;
       const telefone = data.telefone;
-      if (
 
-        cpf &&
-        nome &&
-        endereco &&
-        telefone 
+      if (cpf && nome && endereco && telefone) {
 
-      ) {
-        const pessoa = new Pessoas(
-          cpf,
-          nome,
-          endereco,
-          telefone,
-          
-        );
+        const pessoa = new Pessoas(cpf, nome, endereco, telefone);
+
         pessoa
           .gravar()
           .then(() => {
@@ -90,7 +82,7 @@ export default class PessoasCTRL {
         cpf &&
         nome &&
         endereco &&
-        telefone 
+        telefone
       ) {
         const pessoas = new Pessoas(
           cpf,

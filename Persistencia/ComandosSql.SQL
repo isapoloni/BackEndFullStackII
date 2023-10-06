@@ -29,3 +29,16 @@ INSERT INTO pessoas (cpf, nome, endereco, telefone) VALUES
 ('12345678901', 'Fulano Silva', 'Rua A, 123', '(11) 98765-4321'),
 ('23456789012', 'Ciclana Oliveira', 'Av. B, 456', '(22) 12345-6789'),
 ('34567890123', 'Beltrano Souza', 'Travessa C, 789', '(33) 54321-8765');
+
+
+-- Script para criar a tabela doacao
+
+CREATE TABLE doacao (
+    id SERIAL PRIMARY KEY,
+    codigo_produto INT,
+    cpf_doador VARCHAR(11),
+    quantidade INT,
+    data_doacao DATE,
+    CONSTRAINT FK_PRODUTO_DOACAO FOREIGN KEY (codigo_produto) REFERENCES produto (codigo),
+    CONSTRAINT FK_DOADOR_DOACAO FOREIGN KEY (cpf_doador) REFERENCES pessoas (cpf)
+);

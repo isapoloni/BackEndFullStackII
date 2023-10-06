@@ -3,6 +3,7 @@ import cors from "cors";
 import rotaProduto from "./Router/rotaProduto.js";
 import rotaCategoriaProd from './Router/rotaCategoriaProd.js';
 import rotaPessoas from "./Router/rotaPessoas.js";
+import rotaDoacao from "./Router/rotaDoacao.js";
 
 const app = new express();
 app.use(cors({origin:"*"}));
@@ -14,6 +15,7 @@ app.use(cors({origin:"*"}));
  app.use('/produto', rotaProduto); 
  app.use('/categoriaProduto', rotaCategoriaProd);
  app.use('/pessoas', rotaPessoas)
+ app.use('doacao', rotaDoacao)
  
  const porta = 4024;
  const hostname = '0.0.0.0';
@@ -22,3 +24,4 @@ app.use(cors({origin:"*"}));
      console.log("Backend ouvindo em http://"+hostname+":"+porta);
  });
 
+//https://129.146.68.51/aluno24-pfsii/endpoint

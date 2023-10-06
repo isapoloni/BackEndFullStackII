@@ -7,12 +7,7 @@ export default class Pessoas {
     #endereco;
     #telefone;
 
-    constructor(
-        cpf,
-        nome,
-        endereco,
-        telefone,
-    ) {
+    constructor(cpf, nome, endereco, telefone) {
         this.#cpf = cpf;
         this.#nome = nome;
         this.#endereco = endereco;
@@ -56,7 +51,7 @@ export default class Pessoas {
             cpf: this.#cpf,
             nome: this.#nome,
             endereco: this.#endereco,
-            telefone: this.#telefone,
+            telefone: this.#telefone
         };
     }
 

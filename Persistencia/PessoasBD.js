@@ -3,6 +3,7 @@ import Pessoas from "../Modelo/Pessoas.js";
 import Conect from "./Conexao.js";
 
 export default class PessoaBD {
+
   async gravar(pessoas) {
     if (pessoas instanceof Pessoas) {
       const conect = await Conect();
@@ -12,7 +13,7 @@ export default class PessoaBD {
         pessoas.cpf,
         pessoas.nome,
         pessoas.endereco,
-        pessoas.telefone,
+        pessoas.telefone
       ];
       await conect.query(sql, values);
     }
@@ -32,6 +33,7 @@ export default class PessoaBD {
       await conect.query(sql, values);
     }
   }
+
   async excluir(pessoas) {
     if (pessoas instanceof Pessoas) {
       const conect = await Conect();
@@ -40,6 +42,7 @@ export default class PessoaBD {
       await conect.query(sql, values);
     }
   }
+
   async consultar(term) {
     const conect = await Conect();
     const sql = "SELECT * FROM pessoas";
@@ -47,14 +50,14 @@ export default class PessoaBD {
     const [rows] = await conect.query(sql, values);
     const listPessoas = [];
     for (const row of rows) {
-      const pessoas = new Pessoas (
+      const pessoas = new Pessoas(
 
         row["cpf"],
         row["nome"],
         row["endereco"],
         row["telefone"],
 
-        );
+      );
       listPessoas.push(pessoas);
     }
     return listPessoas;
