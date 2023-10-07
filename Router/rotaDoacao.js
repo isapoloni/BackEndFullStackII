@@ -8,6 +8,7 @@ rotaDoacao
     .get("/", doacaoCTRL.consultar)
     .post("/", doacaoCTRL.gravar)
     .get("/:codigo", doacaoCTRL.consultar)
+    .put("/", doacaoCTRL.atualizar)
 
 
 export default rotaDoacao;

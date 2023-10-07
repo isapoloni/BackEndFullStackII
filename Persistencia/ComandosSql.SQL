@@ -1,7 +1,7 @@
 
 -- Script para criar a tabela produto
 CREATE TABLE produto (
-  codigo SERIAL PRIMARY KEY,
+  codigo int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
   metrica VARCHAR(50),
   descricao VARCHAR(255),
@@ -34,8 +34,8 @@ INSERT INTO pessoas (cpf, nome, endereco, telefone) VALUES
 -- Script para criar a tabela doacao
 
 CREATE TABLE doacao (
-    id SERIAL PRIMARY KEY,
-    codigo_produto INT,
+    id PRIMARY KEY int(11) NOT NULL AUTO_INCREMENT,
+    codigo_produto INT(20),
     cpf_doador VARCHAR(11),
     quantidade INT,
     data_doacao DATE,

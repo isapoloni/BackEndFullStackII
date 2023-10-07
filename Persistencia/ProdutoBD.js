@@ -53,7 +53,7 @@ export default class ProdutoBDPid {
         }
     }
 
-    async consutlar(termo) {
+    async consultar(termo) {
         // if (produto instanceof Produto) {
         const conexao = await conectar();
 
