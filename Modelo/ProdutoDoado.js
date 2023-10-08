@@ -1,23 +1,23 @@
-// import Produto from "./ProdutoPid.js";
+// // import Produto from "./ProdutoPid.js";
 
-export default class ItemDoado {
-  #produto;
+// export default class ItemDoado {
+//   #produto;
 
-  constructor(produto) {
-    this.#produto = produto;
-  }
+//   constructor(produto) {
+//     this.#produto = produto;
+//   }
 
-  get produto() {
-    return this.#produto;
-  }
+//   get produto() {
+//     return this.#produto;
+//   }
 
-  set produto(novoProduto) {
-    this.#produto = novoProduto;
-  }
+//   set produto(novoProduto) {
+//     this.#produto = novoProduto;
+//   }
 
-  toJSON() {
-    return {
-      produto: this.#produto,
-    };
-  }
-}
+//   toJSON() {
+//     return {
+//       produto: this.#produto,
+//     };
+//   }
+// }

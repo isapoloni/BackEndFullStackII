@@ -31,13 +31,13 @@ export default class DoacaoCTRL {
         if (requisicao.method === 'POST' && requisicao.is('application/json')) {
             
             const dados = requisicao.body;
-            const cpfDoador = dados.cpfDoador;
             const dataDoacao = dados.dataDoacao;
+            const cpfDoador = dados.cpfDoador;
             const listaItens = dados.listaItens;
 
-            if (cpfDoador && dataDoacao && listaItens) {
+            if (dataDoacao &&  cpfDoador && listaItens) {
 
-                const doacao = new Doacao(0, cpfDoador, dataDoacao, listaItens);
+                const doacao = new Doacao(0, dataDoacao, cpfDoador, listaItens);
 
                 doacao.gravar().then(() => {
                     resposta.status(200).json({
