@@ -18,12 +18,12 @@ app.use('/categoriaProduto', rotaCategoriaProd);
 app.use('/pessoas', rotaPessoas)
  app.use('/doacao', rotaDoacao)
 
- const porta = 4024;
- const hostname = '0.0.0.0';
+//  const porta = 4024;
+//  const hostname = '0.0.0.0';
 
- app.listen(porta,hostname,()=>{
-     console.log("Backend ouvindo em http://"+hostname+":"+porta);
- });
+//  app.listen(porta,hostname,()=>{
+//      console.log("Backend ouvindo em http://"+hostname+":"+porta);
+//  });
 
 // app.listen(3307, "localhost", () => {
 //     console.log("Service running on http://localhost:3307");
