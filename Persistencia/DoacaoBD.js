@@ -46,7 +46,7 @@ export default class DoacaoBD {
 
             for (const rows of doacoes) {
                 const pessoa = new Pessoas(rows["cpf"], rows["nome"], rows["endereco"], rows["telefone"]);
-                const doacao = new Doacao(rows["codigo"], rows["data_doacao"], pessoa, []);
+                const doacao = new Doacao(rows["codigo"], pessoa, rows["data_doacao"], []);
 
                 const sqlitens = "SELECT pr.*, dp.*, cp.codigo AS codigoCategoria, cp.categoria FROM doacao_produto as dp \
                           INNER JOIN produto as pr ON dp.codigo_produto = pr.codigo \
