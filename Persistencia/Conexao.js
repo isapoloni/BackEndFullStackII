@@ -8,7 +8,7 @@ export default async function Conect() {
   }
   const conexao = mysql.createPool({
     host: "localhost",
-    // user: "aluno24-pfsii",
+    user: "aluno24-pfsii",
     porta: "3306",
     password: "BZ0rKbMOZKXF40FqpZXn",
     // user: "root",
