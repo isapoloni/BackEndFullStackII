@@ -25,9 +25,9 @@ app.use('/pessoas', rotaPessoas)
 //      console.log("Backend ouvindo em http://"+hostname+":"+porta);
 //  });
 
-// app.listen(3307, "localhost", () => {
-//     console.log("Service running on http://localhost:3307");
-// });
+app.listen(3307, "localhost", () => {
+    console.log("Service running on http://localhost:3307");
+});
 
 
 //https://129.146.68.51/aluno24-pfsii/endpoint

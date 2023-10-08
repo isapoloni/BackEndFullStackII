@@ -8,19 +8,19 @@ export default async function Conect() {
   }
   const conexao = mysql.createPool({
     host: "localhost",
-    // user: "aluno24-pfsii",
-    // porta: "3306",
-    // password: "BZ0rKbMOZKXF40FqpZXn",
-    user: "root",
-    password : "",    
-    // database: "backendFullStackII",
-    database: "backend",
-    // waitForConnections: true,
-    // connectionLimit: 10,
-    // maxIdle: 10,
-    // queueLimit: 0,
-    // enableKeepAlive: true,
-    // keepAliveInitialDelay: 0,
+    user: "aluno24-pfsii",
+    porta: "3306",
+    password: "BZ0rKbMOZKXF40FqpZXn",
+    // user: "root",
+    // password : "",    
+    database: "backendFullStackII",
+    // database: "backend",
+    waitForConnections: true,
+    connectionLimit: 10,
+    maxIdle: 10,
+    queueLimit: 0,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 0,
   });
   global.conexao = conexao;
   return await global.conexao.getConnection();
