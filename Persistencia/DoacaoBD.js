@@ -10,15 +10,18 @@ export default class DoacaoBD {
         if (doacao instanceof Doacao) {
             const conexao = await Conect();
             try {
+                // console.log('doacao', doacao)
                 await conexao.beginTransaction();
                 const sql = "INSERT INTO doacao(data_doacao, cpf_doador) VALUES (?,?)";
                 const valores = [doacao.dataDoacao, doacao.cpfDoador];
+                console.log('valores', valores)
                 const resultado = await conexao.query(sql, valores);
                 doacao.codigo = resultado[0].insertId;
 
                 for (const item of doacao.listaItens) {
                     const sql2 = "INSERT INTO doacao_produto(codigo_produto, codigo_doacao, quantidade) VALUES (?,?,?)";
                     const parametros = [item.codigoProduto, doacao.codigo, item.quantidade];
+                    // console.log('parametros', parametros)
                     await conexao.query(sql2, parametros);
                 }
 

@@ -57,7 +57,7 @@ export default class Doacao {
     toJSON() {
         return {
             "codigo": this.#codigo,
-            "doador": this.#cpfDoador,
+            "cpfDoador": this.#cpfDoador,
             "dataDoacao": this.#dataDoacao,
             "listaItens": this.#listaItens.map(item => ({
                 "produto": item.produto,
