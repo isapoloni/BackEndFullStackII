@@ -30,7 +30,7 @@ export default class DoacaoBD {
                 await conexao.rollback();
                 throw e;
             } finally {
-                conexao.release();
+                // conexao.release();
             }
         }
     }
@@ -73,7 +73,7 @@ export default class DoacaoBD {
 
             return listaDoacoes;
         } finally {
-            conexao.release();
+            // conexao.release();
         }
     }
 
@@ -115,9 +115,35 @@ export default class DoacaoBD {
 
             return listaDoacoes;
         } finally {
-            conexao.release();
+            // conexao.release();
         }
     }
+
+    async excluir(codigo) {
+        const conexao = await Conect();
+    
+        try {
+            await conexao.beginTransaction();
+    
+            // Exclui os itens relacionados à doação
+            const sqlExcluirItens = "DELETE FROM doacao_produto WHERE codigo_doacao = ?";
+            const parametrosExcluirItens = [codigo];
+            await conexao.query(sqlExcluirItens, parametrosExcluirItens);
+    
+            // Exclui a doação
+            const sqlExcluirDoacao = "DELETE FROM doacao WHERE codigo = ?";
+            const parametrosExcluirDoacao = [codigo];
+            await conexao.query(sqlExcluirDoacao, parametrosExcluirDoacao);
+    
+            await conexao.commit();
+        } catch (e) {
+            await conexao.rollback();
+            throw e;
+        } finally {
+            // conexao.end();
+        }
+    }
+    
 
     
 }
